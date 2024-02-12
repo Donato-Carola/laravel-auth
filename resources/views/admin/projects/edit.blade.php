@@ -8,8 +8,9 @@
 
             <div class="col-12">
 
-                <form action="{{ route('admin.projects.store') }}" method="POST">
+                <form action="{{ route('admin.projects.update', $project) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3 input-group">
                         <label for="title" class="input-group-text"> Title:</label>
                         <input class="form-control" type="text" name="title" id="title" value="{{ old('title', $project->title) }}">

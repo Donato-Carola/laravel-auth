@@ -53,10 +53,14 @@
 
                                     </a>
 
+                                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-sm btn-warning">
+                                            delete
+                                        </button>
+                                    </form>
 
-                                    <button class="btn btn-sm btn-warning">
-                                        delete
-                                    </button>
                                 </td>
 
 
