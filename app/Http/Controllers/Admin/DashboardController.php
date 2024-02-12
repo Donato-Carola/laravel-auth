@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index(){
-        dd(Auth::user()->email);
-        return 'Benvenuto admin';
+        //dd(Auth::user()->name, Auth::id(), Auth::check());
+        return view('admin.dashboard');
     }
 }
