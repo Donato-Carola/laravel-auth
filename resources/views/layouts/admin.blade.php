@@ -31,7 +31,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-               
+
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,6 +43,10 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+
+                        <a class="navbar-brand" href="{{route('admin.projects.index')}}">
+                            Home
+                        </a>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
