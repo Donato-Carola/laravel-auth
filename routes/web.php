@@ -27,6 +27,11 @@ Route::middleware('auth')
 ->prefix('admin')
 ->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/projects/deleted', [AdminProjectController::class, 'deletedIndex'])->name('projects.deleted.index');
+    Route::get('/projects/deleted/{projects}', [AdminProjectController::class, 'deletedShow'])->name('projects.deleted.show');
+    Route::patch('/projects/deleted/{projects}', [AdminProjectController::class, 'deletedRestore'])->name('projects.deleted.restore');
+    Route::delete('/projects/deleted/{projects}', [AdminProjectController::class, 'deletedDestroy'])->name('projects.deleted.destroy');
+
     Route::resource('/projects',AdminProjectController::class);
 });
 

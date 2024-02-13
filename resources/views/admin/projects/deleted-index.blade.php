@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-12">
                 <h2>
-                    These are all our avaible project, {{ Auth::user()->name }}
+                    These are all our deleted project, {{ Auth::user()->name }}
                 </h2>
             </div>
 
@@ -29,7 +29,7 @@
                             <tr>
                                 <th scope="row">{{ $project->id }}</th>
                                 <td>
-                                    <a href="{{ route('admin.projects.show', $project) }}">
+                                    <a href="{{ route('admin.projects.deleted.show', $project) }}">
                                         {{ $project->title }}
                                 </td>
                                 </a>
@@ -39,25 +39,26 @@
                                 <td>{{ $project->date }}</td>
 
                                 <td>
-                                    <a href="{{ route('admin.projects.show', $project) }}">
+                                    <a href="{{ route('admin.projects.deleted.show', $project) }}">
                                         <button class="btn btn-sm btn-primary">
 
                                             view
                                         </button>
                                     </a>
 
-                                    <a href="{{ route('admin.projects.edit', $project) }}">
-                                        <button class="btn btn-sm btn-success">
-                                            Edit
+                                    <form class="d-inline-block" action="{{ route('admin.projects.deleted.restore', $project) }}" method="POST">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button class="btn btn-sm btn-warning">
+                                           Restore
                                         </button>
+                                    </form>
 
-                                    </a>
-
-                                    <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                                    <form class="d-inline-block" action="{{ route('admin.projects.deleted.destroy', $project) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-sm btn-warning">
-                                            delete
+                                        <button class="btn btn-sm btn-danger">
+                                            Delete
                                         </button>
                                     </form>
 

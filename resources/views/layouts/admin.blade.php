@@ -51,6 +51,10 @@
                         <a class="navbar-brand" href="{{route('admin.projects.create')}}">
                             Add Project
                         </a>
+
+                        <a class="navbar-brand" href="{{route('admin.projects.deleted.index')}}">
+                            Trash
+                        </a>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
