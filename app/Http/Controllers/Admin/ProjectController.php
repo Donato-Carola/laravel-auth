@@ -30,7 +30,15 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'title' => ['required', 'min:1','max:255' ,'string'],
+            'author' => ['required', 'min:1','max:40' ,'string'],
+            'image' => ['url:https','required'],
+            'date' => ['date','required'],
+            'description' => ['required', 'min:10','string'],
+        ]);
+
+
         $project = Project::create($data);
 
         return redirect()->route('admin.projects.show', $project);
@@ -49,6 +57,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+
+
        return view('admin.projects.edit', compact('project'));
     }
 
@@ -58,7 +68,15 @@ class ProjectController extends Controller
     public function update(Request $request,Project $project)
     {
 
-        $data = $request->all();
+        $data = $request->validate([
+            'title' => ['required', 'min:1','max:255' ,'string'],
+            'author' => ['required', 'min:1','max:40' ,'string'],
+            'image' => ['url:https','required'],
+            'date' => ['date','required'],
+            'description' => ['required', 'min:10','string'],
+        ]);
+
+       
         $project->update($data);
 
         return redirect()->route('admin.projects.show', $project);

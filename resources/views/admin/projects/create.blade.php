@@ -8,6 +8,8 @@
 
             <div class="col-12">
 
+                @include('partials.errors')
+
                 <form action="{{ route('admin.projects.store') }}" method="POST">
                     @csrf
                     <div class="mb-3 input-group">
@@ -32,8 +34,7 @@
 
                     <div class="mb-3 input-group">
                         <label for="description" class="input-group-text"> Description:</label>
-                        <textarea class="form-control" type="text" name="description" id="description"> {{ old('description') }}
-                        </textarea>
+                        <textarea class="form-control" type="text" name="description" id="description"> {{ old('description') }}</textarea>
                         </div>
 
 

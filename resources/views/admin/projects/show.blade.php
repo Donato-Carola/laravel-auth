@@ -5,7 +5,7 @@
 @section('main-content')
     <div class="container">
         <div class="row">
-           
+
 
             <div class="col-12">
 
@@ -25,13 +25,7 @@
                 <p>
 
 
-                    <button class="btn btn-sm btn-success">
-                        Edit
-                    </button>
-
-                    <button class="btn btn-sm btn-warning">
-                        delete
-                    </button>
+                   
                 </p>
 
             </div>

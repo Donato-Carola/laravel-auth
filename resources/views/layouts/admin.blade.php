@@ -47,6 +47,10 @@
                         <a class="navbar-brand" href="{{route('admin.projects.index')}}">
                             Home
                         </a>
+
+                        <a class="navbar-brand" href="{{route('admin.projects.create')}}">
+                            Add Project
+                        </a>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
