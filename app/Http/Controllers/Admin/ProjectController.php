@@ -22,7 +22,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $pageTitle = 'Create new post';
+        $project = new Project();
+        return view('admin.projects.create',compact('project','pageTitle'));
     }
 
     /**
@@ -76,7 +78,7 @@ class ProjectController extends Controller
             'description' => ['required', 'min:10','string'],
         ]);
 
-       
+
         $project->update($data);
 
         return redirect()->route('admin.projects.show', $project);
