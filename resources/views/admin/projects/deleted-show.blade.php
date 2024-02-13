@@ -6,9 +6,9 @@
     <div class="container">
         <div class="row">
 
-    <h1>
-        Project cancellato
-    </h1>
+            <h1>
+                Project cancellato
+            </h1>
             <div class="col-12">
 
                 <h2 scope="row">
@@ -16,7 +16,7 @@
                 </h2>
                 <p>
 
-                        {{ $project->title }}
+                    {{ $project->title }}
                 </p>
 
 
@@ -32,6 +32,17 @@
 
             </div>
         </div>
+        <a href="{{route('admin.projects.index')}}">
+            <button class="btn btn-dark">
+                torna alla Home
+            </button>
+        </a>
+
+        <a href="{{route('admin.projects.deleted.index')}}">
+            <button class="btn btn-info">
+                torna alla trash
+            </button>
+        </a>
 
     </div>
 
